@@ -5,24 +5,21 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
-  ManyToOne,
-  JoinColumn,
 } from 'typeorm';
-
-import User from './User';
-
 // Sempre que atualizado, será salvo na tabela 'appointments'
 @Entity('appointments')
-class Appointment {
+class User {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()
-  provider_id: string;
+  name: string;
 
-  @ManyToOne(() => User)
-  @JoinColumn({ name: 'provider_id' })
-  provider: User;
+  @Column()
+  email: string;
+
+  @Column()
+  password: string;
 
   @Column('timestamp with time zone')
   date: Date;
@@ -41,4 +38,4 @@ class Appointment {
   // }
 }
 
-export default Appointment;
+export default User;
