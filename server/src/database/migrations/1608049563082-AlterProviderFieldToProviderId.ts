@@ -18,7 +18,7 @@ export default class AlterProviderFieldToProviderId1607983360429
       }),
     );
 
-    await queryRunner.createForeignKey(
+    queryRunner.createForeignKey(
       'appointments',
       new TableForeignKey({
         name: 'AppointmentProvider',
