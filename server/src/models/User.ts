@@ -7,7 +7,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 // Sempre que atualizado, será salvo na tabela 'appointments'
-@Entity('appointments')
+@Entity('users')
 class User {
   @PrimaryGeneratedColumn('uuid')
   id: string;
@@ -20,9 +20,6 @@ class User {
 
   @Column()
   password: string;
-
-  @Column('timestamp with time zone')
-  date: Date;
 
   @CreateDateColumn()
   created_at: Date;
